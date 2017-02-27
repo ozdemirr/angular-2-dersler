@@ -3,10 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'simple-form',
   template: `<div>
-hello
+<h1>Test css</h1>
   </div>
   `,
-  styles: []
+  styles: [`
+    h1 {
+      color:red;
+    }
+  `]
 })
 export class SimpleFormComponent implements OnInit {
 
