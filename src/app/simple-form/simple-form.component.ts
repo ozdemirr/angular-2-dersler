@@ -3,15 +3,29 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'simple-form',
   template: `<div>
-hello
+  <input type="text"
+  [(ngModel)]="message"
+  [ngClass]="{tiklandiClass:tiklandimi}"
+  (mousedown)="tiklandimi = true"
+  (mouseup)="tiklandimi = false"
+  (mouseleave)="tiklandimi = false"
+  >
   </div>
   `,
-  styles: []
+  styles: [`
+   .tiklandiClass {
+    background-color:red;
+    }
+  `]
 })
 export class SimpleFormComponent implements OnInit {
 
-  constructor() {
+  tiklandimi;
 
+  message;
+
+  constructor() {
+    this.message = "testing..";
   }
 
   ngOnInit() {
